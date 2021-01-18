@@ -1,0 +1,17 @@
+<button *ngIf="isClicked" (click)="toggle()" routerLink="/display" routerLinkActive="active" >Start the website</button>
+<div class="right" *ngIf="cardpayments">
+
+   
+    <ul>
+      <li style="list-style-type: none;" *ngFor="let card of cardpayments | async">
+        <div>{{card.creditCardNumber}}</div>
+        <div>{{card.cardHolder}}</div>
+        <div>{{card.expirationDate}}</div>
+        <div>{{card.securityCode}}</div>
+        <div>{{card.amount}}</div>
+
+      </li>
+    </ul>
+  
+  </div>
+<router-outlet></router-outlet>
